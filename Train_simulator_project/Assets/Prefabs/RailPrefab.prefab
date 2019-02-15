@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6638418616689308471}
   - component: {fileID: 2366482782353917721}
   - component: {fileID: 3892095934926327773}
+  - component: {fileID: 3868785529487506755}
   m_Layer: 0
   m_Name: RailPrefab
   m_TagString: Untagged
@@ -120,3 +121,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteStorage: {fileID: 11400000, guid: e0704e4c66762f94f815e3b3cf5df744, type: 2}
+--- !u!114 &3868785529487506755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5622995128898797403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80436768d3f76545a462d915257376d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

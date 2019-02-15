@@ -4,12 +4,35 @@ using UnityEngine;
 
 namespace TrainSimulator
 {
-    public abstract class AbstractRailFactory : MonoBehaviour
+    public abstract class AbstractRailFactory
     {
         public abstract RailWay CreateRailWay(Tile tile);
-        public abstract void DeleteRailWay(RailWay rail);
-
         public abstract Station CreateStation(Tile tile);
-        public abstract void DeleteStation(Station station);
+    }
+
+    public class RailTrackFactory : AbstractRailFactory
+    {
+        ObjectPool railPool;
+        ObjectPool stationPool;
+
+        public RailTrackFactory(ObjectPool rails, ObjectPool stations)
+        {
+            railPool = rails;
+            stationPool = stations;
+        }
+
+        public override RailWay CreateRailWay(Tile tile)
+        {
+            RailWay rail = railPool.RealeseObject().GetComponent<RailWay>();
+            // settings regarding tile parameter
+            return rail;
+        }
+
+        public override Station CreateStation(Tile tile)
+        {
+            Station station = stationPool.RealeseObject().GetComponent<Station>();
+            // settings regarding tile parameter
+            return station;
+        }
     }
 }

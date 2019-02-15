@@ -7,14 +7,14 @@ namespace TrainSimulator
     // maybe singleton but without free access from any point
     public class GameController : MonoBehaviour
     {
-        [SerializeField] Tile testTile;
+        [SerializeField] List<Tile> testTiles;
 
-        AbstractRailFactory railFactory;
+        PoolManager poolManager;
 
         void Start()
         {
-            railFactory = GetComponent<AbstractRailFactory>();
-            RailTrackController trackController = new RailTrackController(testTile, railFactory);
+            poolManager = GetComponent<PoolManager>();
+            RailTrackController trackController = new RailTrackController(testTiles, poolManager.GetObjectPool(TypeObjectPool.Rail), poolManager.GetObjectPool(TypeObjectPool.Station));
         }
 
         void Update()
@@ -24,11 +24,16 @@ namespace TrainSimulator
     }
 
     [System.Serializable]
+    public struct Train
+    {
+
+    }
+
+    [System.Serializable]
     public struct Tile
     {
-        public Transform prefab;
+        public TypeObjectPool type;
         public Vector2 position;
-        public bool isStation;
         public List<SidesLink> links;
     }
 
