@@ -6,6 +6,8 @@ namespace TrainSimulator
 {
     public abstract class RailWay : MonoBehaviour
     {
-        public abstract void Initialize();
+        public abstract void Initialize(Vector2 pos, List<SidesLink> links);
+
+        //public abstract int GetTimeOut();
     }
 }

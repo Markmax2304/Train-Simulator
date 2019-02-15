@@ -238,14 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f08eae1269b8b418c8728e26137581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testTile:
-    prefab: {fileID: 1053285531850611380, guid: 1821b5954f8668c44ac1dbaeae3dcf97,
-      type: 3}
-    position: {x: 1, y: 1}
-    isStation: 0
+  testTiles:
+  - position: {x: 1, y: 1}
     links:
-    - begin: 0
-      end: 2
+    - begin: 2
+      end: 0
 --- !u!114 &978677952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,11 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolInfo:
   - type: 0
-    count: 100
+    count: 200
     prefab: {fileID: 5622995128898797403, guid: 1821b5954f8668c44ac1dbaeae3dcf97,
       type: 3}
-    parent: {fileID: 0}
-  - type: 1
-    count: 10
-    prefab: {fileID: 739479569513550612, guid: ea2c0c2962e75bb419bbb8a4d4f846e0, type: 3}
     parent: {fileID: 0}

@@ -9,16 +9,14 @@ namespace TrainSimulator
         AbstractRailFactory railFactory;
 
         List<RailWay> railWays;
-        List<Station> railStations;
 
-        public RailTrack(List<Tile> tiles, ObjectPool railPool, ObjectPool stationPool)
+        public RailTrack(List<Tile> tiles, ObjectPool railPool)
         {
-            railFactory = new RailTrackFactory(railPool, stationPool);
+            railFactory = new RailTrackFactory(railPool);
             railWays = new List<RailWay>();
-            railStations = new List<Station>();
 
             for(int i = 0; i < tiles.Count; i++) {
-                // create tile
+                railWays.Add(railFactory.CreateRailWay(tiles[i]));
             }
         }
     }

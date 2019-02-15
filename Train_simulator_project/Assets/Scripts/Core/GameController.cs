@@ -14,7 +14,7 @@ namespace TrainSimulator
         void Start()
         {
             poolManager = GetComponent<PoolManager>();
-            RailTrackController trackController = new RailTrackController(testTiles, poolManager.GetObjectPool(TypeObjectPool.Rail), poolManager.GetObjectPool(TypeObjectPool.Station));
+            RailTrackController trackController = new RailTrackController(testTiles, poolManager.GetObjectPool(TypeObjectPool.Rail));
         }
 
         void Update()
@@ -32,7 +32,6 @@ namespace TrainSimulator
     [System.Serializable]
     public struct Tile
     {
-        public TypeObjectPool type;
         public Vector2 position;
         public List<SidesLink> links;
     }
@@ -42,11 +41,5 @@ namespace TrainSimulator
     {
         public TileSides begin;
         public TileSides end;
-
-        public SidesLink(TileSides begin, TileSides end)
-        {
-            this.begin = begin;
-            this.end = end;
-        }
     }
 }

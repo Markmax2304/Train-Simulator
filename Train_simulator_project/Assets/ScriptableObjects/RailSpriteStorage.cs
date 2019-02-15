@@ -7,7 +7,13 @@ namespace TrainSimulator
     [CreateAssetMenu(fileName = "RailSprites", menuName = "ScriptObj/AddRailSpritesStorage", order = 52)]
     public class RailSpriteStorage : ScriptableObject
     {
-        public Sprite[] railSprites;
-        public Sprite station;
+        public RailSprite[] railSprites;
+    }
+
+    [System.Serializable]
+    public struct RailSprite
+    {
+        public TypeRailWay type;
+        public Sprite spite;
     }
 }

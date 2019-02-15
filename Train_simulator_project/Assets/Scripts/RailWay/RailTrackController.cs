@@ -8,9 +8,9 @@ namespace TrainSimulator
     {
         RailTrack track;
 
-        public RailTrackController(List<Tile> tiles, ObjectPool railPool, ObjectPool stationPool)
+        public RailTrackController(List<Tile> tiles, ObjectPool railPool)
         {
-            track = new RailTrack(tiles, railPool, stationPool);
+            track = new RailTrack(tiles, railPool);
         }
     }
 }

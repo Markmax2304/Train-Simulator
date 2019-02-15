@@ -17,9 +17,10 @@ namespace TrainSimulator
             _transform = transform;
         }
 
-        public override void Initialize()
+        public override void Initialize(Vector2 pos, List<SidesLink> links)
         {
-            SetSprite(spriteStorage.railSprites[4]);        //test
+            _transform.position = pos;
+
         }
 
         void SetSprite(Sprite sprite)
