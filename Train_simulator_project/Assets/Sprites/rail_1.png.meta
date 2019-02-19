@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 6a8e7774d0750dd49bd97cd83ffd9414
+guid: 53fb0906e3d4bf94188d92f37f8611f2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: train_0
-    21300002: train_1
-    21300004: train_2
-    21300006: train_3
-    21300008: train_4
-    21300010: train_5
-    21300012: train_6
-    21300014: train_7
-    21300016: train_8
+    21300000: train 1_0
+    21300002: train 1_1
+    21300004: train 1_2
+    21300006: train 1_3
+    21300008: train 1_4
+    21300010: train 1_5
+    21300012: train 1_6
+    21300014: train 1_7
+    21300016: train 1_8
+    21300018: train 1_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -45,7 +46,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -104,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: train_0
+      name: train 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,13 +119,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9cbdac8dba19394caa1000d6b490fa2
+      spriteID: ec816a6d751624c418525408c53c45b1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_1
+      name: train 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -138,13 +139,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd5accfe5d842594c819bb4a5e08843b
+      spriteID: 1413359e918ba4d4db9af64842476915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_2
+      name: train 1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -158,13 +159,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b25c2bccd71b28e4e8267237dab2c5be
+      spriteID: 87353115b6deb9d48a0238f82acab90a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_3
+      name: train 1_3
       rect:
         serializedVersion: 2
         x: 48
@@ -178,13 +179,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344b31811c86946499dd2fb3be16c8dc
+      spriteID: c23143b70c4b9cc4f9bbd5a0ff24ddc3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_4
+      name: train 1_4
       rect:
         serializedVersion: 2
         x: 0
@@ -198,13 +199,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6225f3d7f8f5594fa3d158429dbe61d
+      spriteID: 457792c69e19a124d8328be523d2e3e3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_5
+      name: train 1_5
       rect:
         serializedVersion: 2
         x: 16
@@ -218,13 +219,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d277dabb0a42734eb589060355e8c05
+      spriteID: b042f07e34f77f74cbea2f92117ca738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_6
+      name: train 1_6
       rect:
         serializedVersion: 2
         x: 32
@@ -238,13 +239,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6504c2fa78b9d7c46b398ec646a22c7a
+      spriteID: 98a9edc849885aa419eb568602e9a790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_7
+      name: train 1_7
       rect:
         serializedVersion: 2
         x: 48
@@ -258,13 +259,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6069296ca882e409e03db2a437cbe1
+      spriteID: a97729d0380a251429e0d16f049db744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: train_8
+      name: train 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -278,7 +279,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dea746aa61f1cc40a27ef425b842eba
+      spriteID: 87fc9b90212914946a56897b3c6e41e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train 1_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97887c2a3c8159e4086d54374fcb4dab
       vertices: []
       indices: 
       edges: []
@@ -286,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cd1956e3c57984a4298f9c3af1492165
+    spriteID: d1f5a587d0882ef4e8f19ffe75827b22
     vertices: []
     indices: 
     edges: []

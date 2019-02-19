@@ -16,11 +16,6 @@ namespace TrainSimulator
             poolManager = GetComponent<PoolManager>();
             RailTrackController trackController = new RailTrackController(testTiles, poolManager.GetObjectPool(TypeObjectPool.Rail));
         }
-
-        void Update()
-        {
-
-        }
     }
 
     [System.Serializable]

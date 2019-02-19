@@ -14,20 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   railSprites:
   - type: 2
-    spite: {fileID: 21300000, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300000, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 0
-    spite: {fileID: 21300002, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300002, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 1
-    spite: {fileID: 21300004, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300004, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 5
-    spite: {fileID: 21300006, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300006, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 4
-    spite: {fileID: 21300008, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300008, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 3
-    spite: {fileID: 21300010, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
-  - type: 7
-    spite: {fileID: 21300012, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
-  - type: 6
-    spite: {fileID: 21300014, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300010, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
   - type: 8
-    spite: {fileID: 21300016, guid: 6a8e7774d0750dd49bd97cd83ffd9414, type: 3}
+    sprite: {fileID: 21300012, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
+  - type: 6
+    sprite: {fileID: 21300014, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
+  - type: 9
+    sprite: {fileID: 21300016, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}
+  - type: 7
+    sprite: {fileID: 21300018, guid: 53fb0906e3d4bf94188d92f37f8611f2, type: 3}

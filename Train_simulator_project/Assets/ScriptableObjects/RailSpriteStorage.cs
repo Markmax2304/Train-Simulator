@@ -14,6 +14,6 @@ namespace TrainSimulator
     public struct RailSprite
     {
         public TypeRailWay type;
-        public Sprite spite;
+        public Sprite sprite;
     }
 }
