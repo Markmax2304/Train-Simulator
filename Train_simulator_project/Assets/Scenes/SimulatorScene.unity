@@ -240,26 +240,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testTiles:
   - position: {x: 0, y: 0}
+    isStation: 1
     links:
     - begin: 1
       end: 0
   - position: {x: 0, y: 1}
+    isStation: 0
     links:
     - begin: 0
       end: 2
   - position: {x: 0, y: 2}
+    isStation: 0
     links:
     - begin: 2
       end: 0
   - position: {x: 0, y: 3}
+    isStation: 0
     links:
     - begin: 1
       end: 2
   - position: {x: 1, y: 3}
+    isStation: 0
     links:
     - begin: 1
       end: 3
   - position: {x: 2, y: 3}
+    isStation: 0
     links:
     - begin: 3
       end: 0
@@ -268,63 +274,78 @@ MonoBehaviour:
     - begin: 3
       end: 2
   - position: {x: 2, y: 4}
+    isStation: 0
     links:
     - begin: 1
       end: 2
   - position: {x: 3, y: 4}
+    isStation: 0
     links:
     - begin: 1
       end: 3
   - position: {x: 4, y: 4}
+    isStation: 0
     links:
     - begin: 1
       end: 3
   - position: {x: 5, y: 4}
+    isStation: 0
     links:
     - begin: 3
       end: 2
   - position: {x: 5, y: 3}
+    isStation: 0
     links:
     - begin: 2
       end: 0
   - position: {x: 5, y: 2}
+    isStation: 0
     links:
     - begin: 2
       end: 0
   - position: {x: 5, y: 1}
+    isStation: 0
     links:
     - begin: 3
       end: 0
   - position: {x: 4, y: 1}
+    isStation: 0
     links:
     - begin: 1
       end: 2
   - position: {x: 4, y: 0}
+    isStation: 0
     links:
     - begin: 3
       end: 0
   - position: {x: 3, y: 0}
+    isStation: 0
     links:
     - begin: 1
       end: 3
   - position: {x: 2, y: 0}
+    isStation: 0
     links:
     - begin: 1
       end: 0
     - begin: 1
       end: 3
   - position: {x: 1, y: 0}
+    isStation: 0
     links:
     - begin: 1
       end: 3
   - position: {x: 2, y: 1}
+    isStation: 0
     links:
     - begin: 2
       end: 0
   - position: {x: 2, y: 2}
+    isStation: 0
     links:
     - begin: 2
       end: 0
+  testTrains: []
 --- !u!114 &978677952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,5 +362,20 @@ MonoBehaviour:
   - type: 0
     count: 200
     prefab: {fileID: 5622995128898797403, guid: 1821b5954f8668c44ac1dbaeae3dcf97,
+      type: 3}
+    parent: {fileID: 0}
+  - type: 1
+    count: 10
+    prefab: {fileID: 5446279225245436910, guid: d84a8b2f2b351764084446c8efee777a,
+      type: 3}
+    parent: {fileID: 0}
+  - type: 2
+    count: 5
+    prefab: {fileID: 6858077415110524565, guid: 0446588713a110c468812c191c0b7e50,
+      type: 3}
+    parent: {fileID: 0}
+  - type: 3
+    count: 50
+    prefab: {fileID: 6858077415110524565, guid: 1e0c7f50a8e8fbe49bb2c041a85b4a85,
       type: 3}
     parent: {fileID: 0}

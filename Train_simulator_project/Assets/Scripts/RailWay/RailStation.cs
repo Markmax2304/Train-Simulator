@@ -6,25 +6,20 @@ namespace TrainSimulator
 {
     public class RailStation : RailWay
     {
-        [SerializeField] RailSpriteStorage spriteStorage;
-
-        SpriteRenderer spriteRend;
-        Transform _transform;
-
-        void Awake()
+        public override void SetPosition(Vector2 pos)
         {
-            spriteRend = GetComponent<SpriteRenderer>();
-            _transform = transform;
+            _transform.position = pos;
         }
 
-        public override void Initialize(Vector2 position, int rotateDegree, TypeRailWay type)
+        public override void SetSprite(TypeRailWay type)
         {
-            _transform.position = position;
-        }
-
-        void SetSprite(Sprite sprite)
-        {
-            spriteRend.sprite = sprite;
+            for (int i = 0; i < spriteStorage.railSprites.Length; i++) {
+                if (type == spriteStorage.railSprites[i].type) {
+                    spriteRend.sprite = spriteStorage.railSprites[i].sprite;
+                    return;
+                }
+            }
+            Debug.Log("Error. Dont found sprite type - " + type.ToString());
         }
     }
 }

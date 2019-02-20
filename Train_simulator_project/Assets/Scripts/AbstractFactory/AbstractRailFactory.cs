@@ -6,25 +6,42 @@ namespace TrainSimulator
 {
     public abstract class AbstractRailFactory
     {
+        protected ObjectPool railPool;
+        protected ObjectPool stationPool;
+
+        public AbstractRailFactory(ObjectPool rails, ObjectPool stations)
+        {
+            railPool = rails;
+            stationPool = stations;
+        }
+
         public abstract RailWay CreateRailWay(Tile tile);
     }
 
     public class RailTrackFactory : AbstractRailFactory
     {
-        ObjectPool railPool;
-
-        public RailTrackFactory(ObjectPool rails)
+        public RailTrackFactory(ObjectPool rails, ObjectPool stations) : base(rails, stations)
         {
-            railPool = rails;
+            
         }
 
         public override RailWay CreateRailWay(Tile tile)
         {
-            RailWay rail = railPool.RealeseObject().GetComponent<RailWay>();
-            TypeRailWay railType = ChooseSpriteByLinks(tile.links);
-            int railDegree = GetRotateDegreeByLinks(tile.links, railType);
-            rail.Initialize(tile.position, railDegree, railType);
-            return rail;
+            if (tile.isStation) {
+                RailWay station = stationPool.RealeseObject().GetComponent<RailWay>();
+                station.SetPosition(tile.position);
+                station.SetSprite(TypeRailWay.Station);
+                return station;
+            }
+            else {
+                RailWay rail = railPool.RealeseObject().GetComponent<RailWay>();
+                TypeRailWay railType = ChooseSpriteByLinks(tile.links);
+                int railDegree = GetRotateDegreeByLinks(tile.links, railType);
+                rail.SetPosition(tile.position);
+                rail.SetRotate(railDegree);
+                rail.SetSprite(railType);
+                return rail;
+            }
         }
 
         TypeRailWay ChooseSpriteByLinks(List<SidesLink> links)
