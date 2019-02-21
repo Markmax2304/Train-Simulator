@@ -345,7 +345,31 @@ MonoBehaviour:
     links:
     - begin: 2
       end: 0
-  testTrains: []
+  testTrains:
+  - headPosition:
+      position: {x: 0, y: 0}
+      rotateDegree: 270
+    carriagePositions:
+    - position: {x: 0, y: 1}
+      rotateDegree: 270
+    - position: {x: 0, y: 2}
+      rotateDegree: 270
+    - position: {x: 0, y: 3}
+      rotateDegree: 270
+    trainColor: {r: 0, g: 0.19907331, b: 1, a: 1}
+    type: 0
+  - headPosition:
+      position: {x: 4, y: 0}
+      rotateDegree: 270
+    carriagePositions:
+    - position: {x: 4, y: 1}
+      rotateDegree: 0
+    - position: {x: 5, y: 1}
+      rotateDegree: 270
+    - position: {x: 5, y: 2}
+      rotateDegree: 270
+    trainColor: {r: 1, g: 0, b: 0, a: 1}
+    type: 1
 --- !u!114 &978677952
 MonoBehaviour:
   m_ObjectHideFlags: 0

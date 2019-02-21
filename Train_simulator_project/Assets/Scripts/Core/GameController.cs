@@ -30,10 +30,17 @@ namespace TrainSimulator
     [System.Serializable]
     public struct TrainInfo
     {
-        public Vector2 headPosition;
-        public List<Vector2> carriagePositions;
+        public StateTrainElement headPosition;
+        public List<StateTrainElement> carriagePositions;
         public Color trainColor;
         public TypeTrain type;
+    }
+
+    [System.Serializable]
+    public struct StateTrainElement
+    {
+        public Vector2 position;
+        public int rotateDegree;
     }
 
     [System.Serializable]

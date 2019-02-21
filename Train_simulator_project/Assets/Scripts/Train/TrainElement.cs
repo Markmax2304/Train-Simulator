@@ -30,9 +30,10 @@ namespace TrainSimulator
             }
         }
 
-        public virtual void SetRotation(int degree)
+        public virtual void SetChainRotation(int degree)
         {
             // вращаем по часовой стрелке вокруг оси Z
+            // дописать
             _transform.Rotate(Vector3.back * degree);
         }
 
@@ -81,6 +82,24 @@ namespace TrainSimulator
         public Vector2 Position {
             get { return _transform.position; }
             set { _transform.position = value; }
+        }
+
+        public int Rotation {
+            get { return (int)_transform.rotation.eulerAngles.z; }
+            set { _transform.Rotate(Vector3.back * value); }
+        }
+
+        public void SetColor(Color color)
+        {
+            spriteRend.color = color;
+        }
+
+        public void SetChainColor(Color color)
+        {
+            spriteRend.color = color;
+            if (backTrainElement != null) {
+                backTrainElement.SetChainColor(color);
+            }
         }
 
         public void SetSprite(TypeCarriage type)
