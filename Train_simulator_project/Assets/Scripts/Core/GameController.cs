@@ -12,18 +12,23 @@ namespace TrainSimulator
 
         PoolManager poolManager;
 
+        GameLooper gameLooper;
         RailTrackController trackController;
         TrainController trainController;
 
         void Start()
         {
             poolManager = GetComponent<PoolManager>();
+
             trackController = new RailTrackController(testTiles, 
                 poolManager.GetObjectPool(TypeObjectPool.Rail), 
                 poolManager.GetObjectPool(TypeObjectPool.Station));
             trainController = new TrainController(testTrains,
                 poolManager.GetObjectPool(TypeObjectPool.Lokomotive),
                 poolManager.GetObjectPool(TypeObjectPool.Carriage));
+
+            gameLooper = GetComponent<GameLooper>();
+            gameLooper.Initialize(trainController, trackController);
         }
     }
 
@@ -34,6 +39,7 @@ namespace TrainSimulator
         public List<StateTrainElement> carriagePositions;
         public Color trainColor;
         public TypeTrain type;
+        public TileSides fromArrive;
     }
 
     [System.Serializable]

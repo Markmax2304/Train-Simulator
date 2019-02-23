@@ -6,11 +6,6 @@ namespace TrainSimulator
 {
     public class UsualRailWay : RailWay
     {
-        public override void SetPosition(Vector2 pos)
-        {
-            _transform.position = pos;
-        }
-
         public override void SetRotate(int degree)
         {
             // вращаем по часовой стрелке вокруг оси Z

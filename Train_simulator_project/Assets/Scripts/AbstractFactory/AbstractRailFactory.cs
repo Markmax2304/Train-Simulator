@@ -27,21 +27,21 @@ namespace TrainSimulator
 
         public override RailWay CreateRailWay(Tile tile)
         {
+            RailWay rail;
             if (tile.isStation) {
-                RailWay station = stationPool.RealeseObject().GetComponent<RailWay>();
-                station.SetPosition(tile.position);
-                station.SetSprite(TypeRailWay.Station);
-                return station;
+                rail = stationPool.RealeseObject().GetComponent<RailWay>();
+                rail.SetSprite(TypeRailWay.Station);
             }
             else {
-                RailWay rail = railPool.RealeseObject().GetComponent<RailWay>();
+                rail = railPool.RealeseObject().GetComponent<RailWay>();
                 TypeRailWay railType = ChooseSpriteByLinks(tile.links);
                 int railDegree = GetRotateDegreeByLinks(tile.links, railType);
-                rail.SetPosition(tile.position);
                 rail.SetRotate(railDegree);
                 rail.SetSprite(railType);
-                return rail;
             }
+            rail.Position = tile.position;
+            rail.SetLinks(tile.links);
+            return rail;
         }
 
         TypeRailWay ChooseSpriteByLinks(List<SidesLink> links)

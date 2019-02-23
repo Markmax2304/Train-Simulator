@@ -6,11 +6,6 @@ namespace TrainSimulator
 {
     public class RailStation : RailWay
     {
-        public override void SetPosition(Vector2 pos)
-        {
-            _transform.position = pos;
-        }
-
         public override void SetSprite(TypeRailWay type)
         {
             for (int i = 0; i < spriteStorage.railSprites.Length; i++) {

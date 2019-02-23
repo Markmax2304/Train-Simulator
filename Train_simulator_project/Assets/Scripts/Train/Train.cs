@@ -8,12 +8,14 @@ namespace TrainSimulator
     {
         TrainElement head;
         Color trainColor;
+        TileSides fromArrive;
 
         // -------------- Initialize ------------------
-        public Train(TrainElement head, Color color)
+        public Train(TrainElement head, Color color, TileSides from)
         {
-            trainColor = color;
             this.head = head;
+            trainColor = color;
+            fromArrive = from;
             head.SetColor(color);
         }
 
@@ -35,6 +37,54 @@ namespace TrainSimulator
         public void DeleteCarriage()
         {
             head.DeleteCarriage();
+        }
+
+        // ------------------- Movement ---------------------
+        public bool IsTrainEnable()
+        {
+            return head != null;
+        }
+
+        public Vector2 GetPositionHead()
+        {
+            return head.Position;
+        }
+
+        public TileSides GetFromArrive()
+        {
+            return fromArrive;
+        }
+
+        public void MoveToPosition(Vector2 position)
+        {
+            Vector2 offset = head.Position - position;
+            TileSides newFromArrive = CalculateSideByOffset(offset);
+
+            if (newFromArrive != fromArrive) {
+                head.SetReadyToRotation(newFromArrive);
+            }
+            fromArrive = newFromArrive;
+
+            head.MoveForwardChainPosition(position);
+        }
+
+        TileSides CalculateSideByOffset(Vector2 offset)
+        {
+            if(offset == Vector2.up) {
+                return TileSides.Top;
+            }
+            else if (offset == Vector2.right) {
+                return TileSides.Right;
+            }
+            else if (offset == Vector2.down) {
+                return TileSides.Bottom;
+            }
+            else if (offset == Vector2.left) {
+                return TileSides.Left;
+            }
+            else {
+                return TileSides.None;
+            }
         }
     }
 }

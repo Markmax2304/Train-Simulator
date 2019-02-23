@@ -14,6 +14,10 @@ namespace TrainSimulator
         protected TrainElement frontTrainElement;
         protected TrainElement backTrainElement;
 
+        bool nextRotation = false;
+        int rotateDegree = 0;
+        TileSides localFromArrive = TileSides.None;
+
         public virtual void Awake()
         {
             spriteRend = GetComponent<SpriteRenderer>();
@@ -21,20 +25,47 @@ namespace TrainSimulator
         }
 
         // ------------------------ Movement -------------------
-        public virtual void MoveChainPosition(Vector2 movePos)
+        public virtual void MoveForwardChainPosition(Vector2 movePos)
         {
             Vector2 backPos = _transform.position;
             _transform.position = movePos;
             if (backTrainElement != null) {
-                backTrainElement.MoveChainPosition(backPos);
+                backTrainElement.MoveForwardChainPosition(backPos);
+            }
+            // define to need rotation
+            if (nextRotation) {
+                SetRotation(rotateDegree);
+                nextRotation = false;
+                if (backTrainElement != null) {
+                    backTrainElement.SetReadyToRotation(localFromArrive);
+                }
             }
         }
 
-        public virtual void SetChainRotation(int degree)
+        public void SetReadyToRotation(TileSides from)
+        {
+            nextRotation = true;
+            switch (from) {
+                case TileSides.Right:
+                    rotateDegree = 0;
+                    break;
+                case TileSides.Bottom:
+                    rotateDegree = 90;
+                    break;
+                case TileSides.Left:
+                    rotateDegree = 180;
+                    break;
+                case TileSides.Top:
+                    rotateDegree = 270;
+                    break;
+            }
+            localFromArrive = from;
+        }
+
+        public virtual void SetRotation(int degree)
         {
             // вращаем по часовой стрелке вокруг оси Z
-            // дописать
-            _transform.Rotate(Vector3.back * degree);
+            _transform.rotation = Quaternion.Euler(Vector3.back * degree);
         }
 
         // --------------------- Connection ----------------------
