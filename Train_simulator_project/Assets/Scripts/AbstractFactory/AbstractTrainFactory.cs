@@ -31,10 +31,10 @@ namespace TrainSimulator
 
             Train train = null;
             if(element.type == TypeTrain.Suburban) {
-                train = new SuburbanTrain(locomotive, element.trainColor, element.fromArrive);
+                train = new SuburbanTrain(locomotive, element.trainColor, element.fromArrive, element.turnsDelayCount);
             }
             else if(element.type == TypeTrain.Express) {
-                train = new ExpressTrain(locomotive, element.trainColor, element.fromArrive);
+                train = new ExpressTrain(locomotive, element.trainColor, element.fromArrive, element.turnsDelayCount);
             }
 
             for(int i = 0; i < element.carriagePositions.Count; i++) {

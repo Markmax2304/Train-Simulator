@@ -9,13 +9,17 @@ namespace TrainSimulator
         TrainElement head;
         Color trainColor;
         TileSides fromArrive;
+        bool isEnable;
+        int clockPerTurn;
 
         // -------------- Initialize ------------------
-        public Train(TrainElement head, Color color, TileSides from)
+        public Train(TrainElement head, Color color, TileSides from, int rate)
         {
             this.head = head;
             trainColor = color;
             fromArrive = from;
+            isEnable = true;
+            clockPerTurn = rate;
             head.SetColor(color);
         }
 
@@ -23,6 +27,16 @@ namespace TrainSimulator
         {
             trainColor = color;
             head.SetChainColor(color);
+        }
+
+        public bool IsTrainEnable()
+        {
+            return head != null && isEnable;
+        }
+
+        public void SetEnable(bool state)
+        {
+            isEnable = state;
         }
 
         // --------------- Manage of carriage ---------------------
@@ -40,9 +54,9 @@ namespace TrainSimulator
         }
 
         // ------------------- Movement ---------------------
-        public bool IsTrainEnable()
+        public int GetRate()
         {
-            return head != null;
+            return clockPerTurn;
         }
 
         public Vector2 GetPositionHead()

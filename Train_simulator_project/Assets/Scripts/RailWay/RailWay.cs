@@ -45,9 +45,10 @@ namespace TrainSimulator
             get { return _transform.position; }
             set { _transform.position = value; }
         }
+
         public virtual void SetRotate(int degree) { }
         public abstract void SetSprite(TypeRailWay type);
 
-        //public abstract int GetTimeOut();
+        public abstract int GetTimeOut();
     }
 }

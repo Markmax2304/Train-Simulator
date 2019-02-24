@@ -16,5 +16,10 @@ namespace TrainSimulator
             }
             Debug.Log("Error. Dont found sprite type - " + type.ToString());
         }
+
+        public override int GetTimeOut()
+        {
+            return Random.Range(1, 6);
+        }
     }
 }

@@ -26,6 +26,18 @@ namespace TrainSimulator
             CreateRailMap();
         }
 
+        public int GetHaltTimeByPosition(Vector2 pos)
+        {
+            RailWay rail = railWayMap[(int)pos.x, (int)pos.y];
+            if (rail != null) {
+                return rail.GetTimeOut();
+            }
+            else {
+                Debug.Log("Checked position(" + pos + ") is beyond limits of rail track.");
+                return 0;
+            }
+        }
+
         public bool GetPossibleWay(Vector2 point, TileSides from, out Vector2 nextPoint)
         {
             List<TileSides> possibleWays = railWayMap[(int)point.x, (int)point.y].GetPossibleSidesToWay(from);

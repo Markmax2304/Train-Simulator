@@ -6,6 +6,6 @@ namespace TrainSimulator
 {
     public class SuburbanTrain : Train
     {
-        public SuburbanTrain(TrainElement head, Color color, TileSides from) : base(head, color, from) { }
+        public SuburbanTrain(TrainElement head, Color color, TileSides from, int rate) : base(head, color, from, rate) { }
     }
 }

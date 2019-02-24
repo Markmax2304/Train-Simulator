@@ -294,8 +294,6 @@ MonoBehaviour:
     links:
     - begin: 3
       end: 2
-    - begin: 0
-      end: 2
   - position: {x: 5, y: 3}
     isStation: 0
     links:
@@ -348,16 +346,6 @@ MonoBehaviour:
     links:
     - begin: 2
       end: 0
-  - position: {x: 5, y: 5}
-    isStation: 0
-    links:
-    - begin: 2
-      end: 0
-  - position: {x: 5, y: 6}
-    isStation: 0
-    links:
-    - begin: 2
-      end: 2
   testTrains:
   - headPosition:
       position: {x: 0, y: 0}
@@ -372,6 +360,7 @@ MonoBehaviour:
     trainColor: {r: 0, g: 0.19907331, b: 1, a: 1}
     type: 0
     fromArrive: 0
+    turnsDelayCount: 3
   - headPosition:
       position: {x: 4, y: 0}
       rotateDegree: 270
@@ -383,6 +372,7 @@ MonoBehaviour:
     trainColor: {r: 1, g: 0, b: 0, a: 1}
     type: 1
     fromArrive: 0
+    turnsDelayCount: 1
 --- !u!114 &978677952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,4 +418,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8900922d421f34c9bc92cfe6299e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clock: 1
+  clockPerSecond: 10

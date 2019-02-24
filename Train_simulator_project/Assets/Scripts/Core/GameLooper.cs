@@ -6,7 +6,10 @@ namespace TrainSimulator
 {
     public class GameLooper : MonoBehaviour
     {
-        public float clock = 1f;
+        public float clockPerSecond = 1f;
+        float timeDelay;
+        float timeCounter = 0;
+        int countTick = 0;
 
         TrainController trainContr;
         RailTrackController railContr;
@@ -17,10 +20,19 @@ namespace TrainSimulator
             railContr = railController;
         }
 
-        void Update()
+        void Start()
         {
-            if (Input.GetMouseButtonUp(0)) {
+            timeDelay = 1 / clockPerSecond;
+        }
+
+        void FixedUpdate()
+        {
+            timeCounter += Time.fixedDeltaTime;
+            if(timeCounter >= timeDelay) {
+                countTick++;
                 Tick();
+                timeCounter = 0;
+                
             }
         }
 
@@ -29,7 +41,9 @@ namespace TrainSimulator
             trainContr.ResetTrainQueue();
             while (trainContr.CanGetNextTrain()) {
                 Train train = trainContr.GetNextTrain();
-                TrainTurn(train);
+                if (countTick % train.GetRate() == 0) {
+                    TrainTurn(train);
+                }
             }
 
             // Verify Colliding part
@@ -42,12 +56,19 @@ namespace TrainSimulator
 
             Vector2 currentPos = train.GetPositionHead();
             TileSides from = train.GetFromArrive();
+            // station halt
+            /*int halt = railContr.GetHaltTimeByPosition(currentPos);
+            if(halt > 0) {
+
+            }*/
+
             Vector2 nextPos;
             if (railContr.GetPossibleWay(currentPos, from, out nextPos)) {
                 train.MoveToPosition(nextPos);
             }
             else {
                 Debug.Log("Train is in endup.");
+                train.SetEnable(false);
             }
         }
     }

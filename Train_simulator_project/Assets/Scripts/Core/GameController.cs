@@ -40,6 +40,8 @@ namespace TrainSimulator
         public Color trainColor;
         public TypeTrain type;
         public TileSides fromArrive;
+        [Range(1, 10)]
+        public int turnsDelayCount;
     }
 
     [System.Serializable]
